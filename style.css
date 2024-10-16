@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #FFFFFF;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: #D2D7DF;
+}
+
+.logo {
+    font-size: 32px;
+    color: #353535;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar a {
+    font-size: 18px;
+    color: #353535;
+    font-weight: 500;
+    text-decoration: none;
+    margin-left: 40px;
+}
+
+.container {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #353535;
+}
+
+.balance {
+    font-size: 60px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    color: #353535;
+}
+
+.transactions {
+    margin-top: 20px;
+}
+
+.transaction {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #353535;
+    
+}
+
+.deposit {
+    color: green;
+}
+
+.withdraw {
+    color: red;
+}
+
+.date {
+    font-size: .9em;
+    color: #353535;
+}
+
+.welcome {
+    font-size: 60px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+    color: #353535;
+}
+
+.button {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    padding: 20px; 
+}
+
+.navigate {
+    background-color: #D2D7DF;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 20px 0;
+    max-width: 400px;
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+    font-size: 40px;
+}
+
+.navigate:hover {
+    background-color: #abaeb4; 
+}
+
+.navigate a {
+    color: #353535;
+    text-decoration: none;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #D2D7DF;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    margin: 80px auto;
+}
+
+.login-container input {
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #353535;
+    border-radius: 5px;
+}
+
+.login-container button {
+    padding: 10px;
+    background-color: #8DAA91;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+    background-color: #7B9C85;
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+}

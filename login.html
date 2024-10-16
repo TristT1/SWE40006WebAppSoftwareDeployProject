@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Banking Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button onclick="login()">Login</button>
+        <p id="error-message" class="error-message"></p>
+    </div>
+
+    <script>
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            const correctUsername = 'admin';
+            const correctPassword = 'admin';
+
+            if (username === correctUsername && password === correctPassword) {
+                window.location.href = 'profile.html';
+            } else {
+                errorMessage.innerText = 'Incorrect username or password.';
+            }
+        }
+    </script>
+
+</body>
+</html>
