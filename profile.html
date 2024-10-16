@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+
     <header class="header">
         <a href="#" class="logo">Logo</a>
         <nav class="navbar">
@@ -16,19 +17,21 @@
             <a href="contact.html">Contact Us</a>
         </nav>
     </header>
+
     <div class="container">
         <h1>Your Profile</h1>
         <div class="balance">Total Balance: <span id="balance">$0.00</span></div>
-        <button id="transfer-btn">Transfer</button>
-        <button id="pay-btn">Pay</button>
+
         <div class="transactions">
             <h2>Past Transactions</h2>
             <div id="transaction-list">
                 <!-- Transaction entries will be injected here by JavaScript -->
             </div>
         </div>
+
         <canvas id="moneyChart" width="400" height="200"></canvas>
     </div>
+
     <script>
         const transactions = [
             { amount: 200, type: 'deposit', date: '2024-10-15' },
@@ -37,25 +40,31 @@
             { amount: 75, type: 'withdraw', date: '2024-10-01' },
         ];
 
+        
         const balance = transactions.reduce((acc, t) => {
             return t.type === 'deposit' ? acc + t.amount : acc - t.amount;
         }, 0);
-        document.getElementById('balance').innerText = $${balance.toFixed(2)};
 
+        document.getElementById('balance').innerText = `$${balance.toFixed(2)}`;
+
+        
         transactions.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(t => {
             const transactionDiv = document.createElement('div');
-            transactionDiv.className = transaction ${t.type};
-            transactionDiv.innerHTML = ${t.type === 'deposit' ? '+' : '-'}$${t.amount.toFixed(2)} <span class="date">(${t.date})</span>;
+            transactionDiv.className = `transaction ${t.type}`;
+            transactionDiv.innerHTML = `${t.type === 'deposit' ? '+' : '-'}$${t.amount.toFixed(2)} <span class="date">(${t.date})</span>`;
             document.getElementById('transaction-list').appendChild(transactionDiv);
         });
 
+        
         const labels = transactions.map(t => t.date);
         let balanceData = [0];
         let currentBalance = 0;
+
         transactions.forEach(t => {
             currentBalance += (t.type === 'deposit' ? t.amount : -t.amount);
             balanceData.push(currentBalance);
         });
+
         const data = {
             labels: labels,
             datasets: [
@@ -68,6 +77,7 @@
                 }
             ]
         };
+
         const config = {
             type: 'line',
             data: data,
@@ -90,10 +100,12 @@
                 }
             }
         };
+
         const moneyChart = new Chart(
             document.getElementById('moneyChart'),
             config
         );
     </script>
+
 </body>
 </html>
